@@ -1,0 +1,11 @@
+.container {
+    background-color: #c5b4b4;
+    padding: 20px;
+    border-Radius: 5px;
+    text-Align: center;
+
+    .mensaje {
+        font-Size: 20px;
+        color: #000000;
+    }
+}
