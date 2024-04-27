@@ -7,7 +7,7 @@
 .Navbar {
     justify-content: space-between;
     align-items: center;
-    background-image: url(../../assets/img/fondo_encabezado.jpg);
+    background-image: url(../../../public/img/fondo_encabezado.jpg);
     background-position: center;
     background-size: cover;
     min-height: 150px;
@@ -50,10 +50,8 @@
     .LogoContainer {
         margin-right: 3px;
 
-        /* Espacio entre el logo y los elementos de navegación */
         .logoMarca {
             max-width: 200px;
-            /* Ancho deseado de la imagen */
             height: auto;
         }
     }

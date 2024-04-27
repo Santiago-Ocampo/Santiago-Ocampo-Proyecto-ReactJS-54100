@@ -1,7 +1,8 @@
 import "./navbar.css"
-import logo from "../../assets/img/logo.png"
+import logo from "../../../public/img/logo.png";
 import { BsCartFill } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
@@ -10,23 +11,23 @@ function Navbar() {
             <nav className="Nav">
 
                 <div className="LogoContainer">
-                    <a href="#">
+                    <Link to={"/"}>
                         <img src={logo} className="logoMarca" alt="" />
-                    </a>
+                    </Link>
                 </div>
 
                 <ul className="NavUl">
-                    <li className="NavLi"><a href="#">SHOP</a></li>
-                    <li className="NavLi"><a href="#">ACERCA DE</a></li>
-                    <li className="NavLi"><a href="#">CONTACTO</a></li>
-                    <li className="NavLi"><a href="#">INICIAR SESION</a></li>
+                    <li className="NavLi"><Link to={"/"}>SHOP</Link></li>
+                    <li className="NavLi"><Link to={"/About"}>ACERCA DE</Link></li>
+                    <li className="NavLi"><Link to={"/contact"}>CONTACTO</Link></li>
+                    <li className="NavLi"><Link to={"/login"}>INICIAR SESION</Link></li>
                 </ul>
 
                 <div className="carrito">
-                    <a href="#">
+                    <Link to={"/Cart"}>
                         < BsCartFill size="25px" className="IconoCarrito" />
                         <span className="TextoCarrito">1</span>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="Barra">
