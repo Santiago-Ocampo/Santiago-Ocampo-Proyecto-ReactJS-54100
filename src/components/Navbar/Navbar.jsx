@@ -1,10 +1,14 @@
 import "./navbar.css"
 import logo from "../../../public/img/logo.png";
-import { BsCartFill } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { useCart } from "../CartContext/CartContext";
+import CartWidget from "../CartContext/CartWidget";
 
 function Navbar() {
+
+    const { cartCount } = useCart()
+    console.log("Cantidad de elementos en el carrito:", cartCount)
     return (
         <div className="Navbar">
 
@@ -23,12 +27,7 @@ function Navbar() {
                     <li className="NavLi"><Link to={"/login"}>INICIAR SESION</Link></li>
                 </ul>
 
-                <div className="carrito">
-                    <Link to={"/Cart"}>
-                        < BsCartFill size="25px" className="IconoCarrito" />
-                        <span className="TextoCarrito">1</span>
-                    </Link>
-                </div>
+                <CartWidget/>
 
                 <div className="Barra">
                     <button className="BarraHambur">

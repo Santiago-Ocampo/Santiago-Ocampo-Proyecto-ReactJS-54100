@@ -1,14 +1,21 @@
 import "./ItemDetailContainer.css";
 import { useState } from "react";
+import { useCart } from "../CartContext/CartContext";
 
 
 const ItemDetail = ({ product }) => {
 
     // Lógica para agregar el producto al carrito
+
+    const {addToCart}= useCart()
     const [isAddedToCart, setIsAddedToCart] = useState(false)
+
     const handleAddToCart = () => {
+        addToCart(product)
         setIsAddedToCart(true);
     };
+
+
     return (
         <div className="card-detail">
             <h2 className="titulo-detail">{product.name}</h2>
