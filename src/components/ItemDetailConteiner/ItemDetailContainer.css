@@ -5,11 +5,11 @@
     align-items: center;
 
     .item-detail {
-        max-width: 600px;
+        max-width: 500px;
         background-color: #f9f9f9;
         border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
+        padding: 10px;
+        margin-bottom: 5px;
     }
 }
 
@@ -19,13 +19,14 @@
     max-width: 100%;
     background-color: #ee9292;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
     text-align: center;
+ 
 
     .titulo-detail {
         font-size: 24px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-family: 'Arial Black', sans-serif;
         animation: fadeInUp 0.5s ease;
 
@@ -46,7 +47,7 @@
     .imagen-box-card-detail {
         display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         :hover {
             transform: scale(1.1);
@@ -61,7 +62,7 @@
     }
 
     .Info-card-detail {
-        font-size: 18px;
+        font-size: 15px;
 
         .descripcion-card-detail {
             font-size: 16px;
@@ -74,29 +75,55 @@
             color: #333;
             font-weight: bold;
             font-family: 'Comic Sans MS', cursive;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
 
+        .stock-card-detail {
+            font-weight: bold;
+            font-family: 'Comic Sans MS';
         }
     }
 
     .addToCart-button {
-        background-color: #4CAF50;
-        border: none;
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Comic Sans MS';
+        gap: 2px;
 
-        :hover {
-            background-color: #45a049;
+        .item-count-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 5px;
         }
 
-        .addToCart {
-            background-color:#45a049;
+        .btn-add-to-cart {
+            background-color: #050705;
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-family: 'Comic Sans MS';
+
         }
-        :hover {
-            background-color: #e9f0ea;
+
+        .btn-add-to-cart:hover {
+            background-color: #4845a0;
+            /* Cambio de color al pasar el mouse */
         }
+
+        .count-add-to-cart {
+            margin-bottom: 10px;
+            /* Margen inferior para separar del botón */
+        }
+
     }
+
 }

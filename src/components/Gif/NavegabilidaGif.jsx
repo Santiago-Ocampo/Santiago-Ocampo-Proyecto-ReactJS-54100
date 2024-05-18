@@ -2,6 +2,7 @@ import gifImage from "../../../public/img/Gif.gif"
 import "./NavegabilidadGif.css"
 import { useLocation } from "react-router-dom";
 
+
 const NavegabilidadGIF = () => {
   const location = useLocation();
   const isItemDetailPage = location.pathname.includes("/detail")

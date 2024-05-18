@@ -1,6 +1,6 @@
 import "./ItemListContainer.css"
 import { useEffect, useState } from "react";
-import ObtenerProducts from "../Resources/ObtenerProducts";
+import { collection, getFirestore, getDocs } from "firebase/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 
@@ -8,14 +8,22 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const { idCategory } = useParams();
+
     useEffect(() => {
-        ObtenerProducts
-            .then((respuesta) => {
-                const filteredProducts = idCategory ? respuesta.filter((producto) => producto.category === idCategory) : respuesta
-                setProducts(filteredProducts)
-            })
-            .catch(error => console.error(error))
-    }, [idCategory]) //para evitar que se vuelva a renderizar y no se forme un bucle infinito.
+        const fetchProducts = async () => {
+            try {
+                const firestore = getFirestore();
+                const itemsCollection = collection(firestore, "Items");
+                const querySnapshot = await getDocs(itemsCollection);
+                const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setProducts(productsData);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        };
+
+        fetchProducts();
+    }, [idCategory]);
 
     return (
         <div className="container">
@@ -25,8 +33,8 @@ const ItemListContainer = ({ greeting }) => {
             </div>
         </div>
     );
-}
 
+};
 export default ItemListContainer
 
 // se debe encargar de consumir la api o una promesa que nos traiga el listado de productos

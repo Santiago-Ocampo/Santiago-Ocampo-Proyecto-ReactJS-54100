@@ -1,21 +1,28 @@
 import "./ItemDetailContainer.css";
 import { useEffect, useState } from "react";
-import ObtenerProducts from "../Resources/ObtenerProducts";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
+
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const { idProduct } = useParams()
+    const [product, setProduct] = useState({});
+    const { idProduct } = useParams();
 
     useEffect(() => {
-        ObtenerProducts
-            .then((respuesta) => {
-                const selectedProduct = idProduct ? respuesta.find((product) => product.id === parseInt(idProduct)) : {}
-                setProduct(selectedProduct)
-            })
-            .catch(error => console.error(error))
-    }, [idProduct])
+        const fetchProduct = async () => {
+            const firestore = getFirestore();
+            const productRef = doc(firestore, "Items", idProduct);
+            const productSnap = await getDoc(productRef);
+            if (productSnap.exists()) {
+                setProduct({ id: productSnap.id, ...productSnap.data() });
+            } else {
+                console.log("No se encontró el producto");
+            }
+        };
+
+        fetchProduct();
+    }, [idProduct]);
 
     return (
         <div className="item-detail-container">

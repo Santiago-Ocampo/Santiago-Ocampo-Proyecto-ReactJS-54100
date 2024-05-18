@@ -23,7 +23,6 @@ function Navbar() {
                 <ul className="NavUl">
                     <li className="NavLi"><Link to={"/"}>SHOP</Link></li>
                     <li className="NavLi"><Link to={"/About"}>ACERCA DE</Link></li>
-                    <li className="NavLi"><Link to={"/contact"}>CONTACTO</Link></li>
                     <li className="NavLi"><Link to={"/login"}>INICIAR SESION</Link></li>
                 </ul>
 

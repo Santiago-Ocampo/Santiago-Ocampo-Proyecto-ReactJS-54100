@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Cart-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: 2px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    background-color:#796f866d;
+
+    .Cart-titulo {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        margin-top: 10px;
+        color: #000000;
+    }
+
+    .Cart-return {
+        text-align: center;
+        background-size: cover;
+        margin-bottom: 30px;
+        margin: 10px;
+
+        .Cart-return-p {
+            margin: 30px;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .btn-Cart {
+            cursor: pointer;
+            padding: 0.5rem 0.5rem;
+            border-radius: 1px;
+            margin-top: 10px;
+            color: #040404;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+            background-color: #af721b;
+        }
+    }
+
+    .Cart-body {
+        margin: 30px;
+        font-size: 20px;
+
+
+        .card-Cart-body {
+            background-color: #595296;
+            /* Color de fondo */
+            border: 1px solid #989e27;
+            /* Borde */
+            border-radius: 8px;
+            /* Bordes redondeados */
+            padding: 16px;
+            /* Espaciado interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra */
+            transition: box-shadow 0.3s ease;
+            /* Transición suave al pasar el mouse */
+            margin-top: 10px;
+
+            .card-Cart-body:hover {
+                box-shadow: 0 8px 20px rgba(215, 152, 152, 0.2);
+                /* Cambia la sombra al pasar el mouse */
+            }
+
+            .card-Cart-title {
+                margin-bottom: 20px;
+                font-size: 24px;
+                margin-top: 10px;
+                color: #070606;
+            }
+
+            .card-Cart-text {
+                margin: 5px;
+                font-size: 20px;
+            }
+
+            .card-Cart-btn {
+                cursor: pointer;
+                padding: 0.5rem 0.5rem;
+                border-radius: 1px;
+                margin-top: 10px;
+                color: #f1e8e8;
+                text-decoration: none;
+                text-align: center;
+                font-size: 20px;
+                background-color: #725991;
+            }
+        }
+
+        .Cart-total{
+            margin-bottom: 20px;
+            font-size: 24px;
+            margin-top: 10px;
+            color: #070606;
+        }
+
+    }
+}

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Footer {
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../../../public/img/fondo-footer.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100px;
+    padding: 2rem;
+
+    .Footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 10px;
+
+        .Footer-box {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 10px;
+            color: antiquewhite;
+            width: 30%;
+
+            .Footer-box-titulo {
+                margin-right: 20px;
+            }
+
+            .footer-contact {
+                margin-bottom: 5px;
+                margin-top: 1.5px
+            }
+        }
+
+        .Footer-social {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 100px;
+            color: antiquewhite;
+            width: 30%;
+
+            .Footer-social-titulo {
+                margin-right: 20px;
+                margin-top: -68px;
+            }
+
+            .Footer-iconos {
+                margin-right: 20px;
+                /* Espacio entre el icono y el texto */
+                font-size: 30px;
+            }
+
+            /* Tamaño del icono */
+            a:hover .bi-instagram {
+                color: rgb(183, 19, 183);
+                /* Cambia el color a violeta al pasar el mouse sobre el icono de Instagram */
+            }
+
+            a:hover .bi-facebook {
+                color: blue;
+                /* Cambia el color a azul al pasar el mouse sobre el icono de Facebook */
+            }
+
+            a:hover .bi-whatsapp {
+                color: green;
+                /* Cambia el color a verde al pasar el mouse sobre el icono de Whatsapp */
+            }
+
+        }
+
+        .Footer-copyright {
+            text-align: right;
+            flex: 10;
+            width: 30%;
+            /* Hace que este elemento ocupe el espacio restante */
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Footer-container {
+        flex-direction: column;
+    }
+
+    .Footer-box,
+    .Footer-social,
+    .Footer-copyright {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    .Footer-container {
+        padding: 10px;
+    }
+
+    .Footer-box,
+    .Footer-social,
+    .Footer-copyright {
+        text-align: center;
+    }
+}

@@ -1,0 +1,27 @@
+.item-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    background-color: #ee9292;
+
+    .count-button {
+        padding: 10px 10px;
+        background-color: #851212;
+        color: #000;
+        cursor: pointer;
+    }
+
+    .count-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #ee9292;
+    }
+
+    .add-to-cart-button {
+        padding: 10px 10px;
+        border: none;
+        background-color: #ee9292;
+        cursor: pointer;
+    }
+}
